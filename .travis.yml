@@ -36,12 +36,12 @@ script:
   - gulp unit || travis_terminate 1
   - gulp e2e-install || travis_terminate 1
   - gulp e2e || travis_terminate 1
-  - gulp platform-electron-dev
+  - gulp platform-electron-dev || travis_terminate 1
   - gulp build --buildConfiguration=prod || travis_terminate 1
   - gulp e2e || travis_terminate 1
-  - gulp platform-web-package --buildConfiguration=prod
-  - gulp platform-electron-package --buildConfiguration=prod
-  - gulp platform-docker-package --buildConfiguration=prod
+  - gulp platform-web-package --buildConfiguration=prod || travis_terminate 1
+  - gulp platform-electron-package --buildConfiguration=prod || travis_terminate 1
+  - gulp platform-docker-package --buildConfiguration=prod || travis_terminate 1
 cache:
   directories:
   - ./app/www/node_modules
