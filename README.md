@@ -22,3 +22,5 @@
 * gulp platform-web-package --buildConfiguration=prod
 * gulp platform-electron-package --buildConfiguration=prod
 * gulp platform-docker-package --buildConfiguration=prod
+* gulp platform-cordova-dev --buildConfiguration=prod
+* gulp platform-cordova-theme --buildConfiguration=prod
