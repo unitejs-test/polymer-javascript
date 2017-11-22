@@ -29,6 +29,7 @@ before_install:
   - node unitejs/cli/bin/unite generate --type=class --name=MyClass --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=component --name=MyComponent --outputDirectory=./app
   - node unitejs/cli/bin/unite generate --type=enum --name=MyEnum --outputDirectory=./app
+  - node unitejs/cli/bin/unite generate --type=interface --name=MyInterface --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Cordova --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Docker --outputDirectory=./app
   - node unitejs/cli/bin/unite platform --operation=add --platformName=Electron --outputDirectory=./app
@@ -43,6 +44,7 @@ script:
   - gulp e2e || travis_terminate 1
   - gulp build --buildConfiguration=prod || travis_terminate 1
   - gulp e2e || travis_terminate 1
+  - gulp doc-build || travis_terminate 1
   - gulp platform-web-package --buildConfiguration=prod || travis_terminate 1
   - gulp platform-electron-dev || travis_terminate 1
   - gulp platform-electron-package --buildConfiguration=prod || travis_terminate 1
